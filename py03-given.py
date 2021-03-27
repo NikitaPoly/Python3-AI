@@ -140,7 +140,7 @@ class ExampleList(object):
         for i in range(1, len(valCount)):
             if valCount[i] > valCount[maxID]:
                 maxID = i
-        return None # change this to what it should be
+        return classAttrSpec.getValAt(maxID) # change this to what it should be
 
     def split(self, attrSpec):
         '''
@@ -255,4 +255,4 @@ def testAll():
     testCountClassValues()
     testGetMajorityClass()
     testSplit()
-testCountClassValues()
+testGetMajorityClass()
