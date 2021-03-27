@@ -103,7 +103,7 @@ class ExampleList(object):
     def allSameClass(self):
         standardCLS = self.__exampleList[0]
         for example in self.__exampleList:
-            if(not standardCLS.hasSameClassAs(example)):
+            if not standardCLS.hasSameClassAs(example):
                 return False
         return True
 
@@ -123,11 +123,10 @@ class ExampleList(object):
         '''
         
         for ex in self.__exampleList: 
-            pass # Delete this line and fill in your own code (probably a few lines)
-            # Get the class of the current example
-            # Get the index of that class value from classAttrSpec
-            # Increment the corresponding count
-
+            for i in range(classAttrSpec.getNumVals()):
+                if classAttrSpec.getValAt(i) == ex.getClass():
+                    valCount[i] += 1
+            
         return valCount
     
     def getMajorityClass(self, classAttrSpec):
@@ -256,4 +255,4 @@ def testAll():
     testCountClassValues()
     testGetMajorityClass()
     testSplit()
-testAllSameClass()
+testCountClassValues()
