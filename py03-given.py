@@ -101,11 +101,11 @@ class ExampleList(object):
         self.__exampleList.append(ex)
 
     def allSameClass(self):
-        '''
-        Returns True if all examples in the list are in the same class,
-        False otherwise.
-        '''
-        return None
+        standardCLS = self.__exampleList[0]
+        for example in self.__exampleList:
+            if(not standardCLS.hasSameClassAs(example)):
+                return False
+        return True
 
     def countClassValues(self, classAttrSpec):
         '''
@@ -256,3 +256,4 @@ def testAll():
     testCountClassValues()
     testGetMajorityClass()
     testSplit()
+testAllSameClass()
