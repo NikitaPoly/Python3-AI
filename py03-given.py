@@ -158,11 +158,9 @@ class ExampleList(object):
         
         attrName = attrSpec.getName()
         for ex in self.__exampleList: # Using the list for-each notation
-            # Get ex's value for this attribute
-            # Find the index of that value in the attrSpec
-            # Append this example to the corresponding ExampleList (the one for that value)
-            #      Use the append method for lists for the above step
-            pass # Delete this line once you've filled in your own code
+            for i in range(attrSpec.getNumVals()):
+                if attrSpec.getValAt(i) == ex.getValFor(attrName):
+                    splitExamples[i].append(ex)
         
         return splitExamples
     
@@ -255,4 +253,4 @@ def testAll():
     testCountClassValues()
     testGetMajorityClass()
     testSplit()
-testGetMajorityClass()
+testSplit()
